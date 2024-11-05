@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Complete project documentation",
+        "description": "Finish writing the project documentation, including setup instructions and API details.",
+        "status": "pending",
+        "image": null
+    },
+    {
+        "id": 2,
+        "title": "Implement user authentication",
+        "description": "Add basic authentication to protect the API routes.",
+        "status": "in-progress",
+        "image": null
+    },
+    {
+        "id": 3,
+        "title": "Test image upload functionality",
+        "description": "Ensure that image upload works correctly when creating or updating tasks.",
+        "status": "completed",
+        "image": "uploads/sample-image-1.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Set up database backup",
+        "description": "Configure regular backups for the project database to prevent data loss.",
+        "status": "pending",
+        "image": "uploads/sample-image-2.jpg"
+    }
+]

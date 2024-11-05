@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Task Manager API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Task Manager API</h1>
+    <form id="taskForm" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+        </select>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image">
+
+        <button type="button" onclick="createTask()">Create Task</button>
+    </form>
+
+    <script>
+        async function createTask() {
+            const form = document.getElementById('taskForm');
+            const formData = new FormData(form);
+
+            const response = await fetch('/tasks', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                const task = await response.json();
+                alert('Task created: ' + JSON.stringify(task));
+            } else {
+                alert('Error creating task');
+            }
+        }
+    </script>
+</body>
+</html>
