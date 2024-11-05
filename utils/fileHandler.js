@@ -31,7 +31,7 @@ const writeTasks = (tasks) => {
     try {
         fs.writeFileSync(filePath, JSON.stringify(tasks, null, 2));
     } catch (err) {
-        console.error('Error writing to tasks file:', err);
+        console.error('syntx Error writing to tasks file:', err);
     }
 };
 
